@@ -1,0 +1,8 @@
+:root{color-scheme:dark;--background:#10151b;--surface:#192129;--elevated:#25313b;--foreground:#f0f4f7;--muted:#b9c5d0;--border:#778895;--accent:#a5d5ef;--accent-foreground:#10151b;--selection:#304553;--hover:#293945;--focus:#f0f4f7;--success:#9fe3b3;--warning:#ffcf86;--destructive:#ffa8a8}
+body[data-palette=warm]{--background:#1c1714;--surface:#29211d;--elevated:#3a3028;--foreground:#fff3df;--muted:#d4c0a7;--border:#9b8873;--accent:#efbd83;--accent-foreground:#1c1714;--selection:#4c392a;--hover:#3c3027;--focus:#fff3df;--success:#b8e6a5;--warning:#ffcf86;--destructive:#ffaaa0}
+body[data-palette=light]{color-scheme:light;--background:#f4f2ec;--surface:#ffffff;--elevated:#e8e9e5;--foreground:#18252c;--muted:#485962;--border:#71818a;--accent:#245b72;--accent-foreground:#ffffff;--selection:#d9e7ed;--hover:#e7eff2;--focus:#18252c;--success:#246438;--warning:#765000;--destructive:#a72b33}
+/* Contours fonctionnels contrastés aussi sur sélection et survol. */
+:root{--border:#9aabb8}body[data-palette=warm]{--border:#bba58e}body[data-palette=light]{--border:#5d6c75}
+
+:root{--overlay:#080d13;--overlay-foreground:#ffffff;--error:var(--destructive)}
+::selection{background:var(--selection);color:var(--selection-foreground,var(--foreground))}

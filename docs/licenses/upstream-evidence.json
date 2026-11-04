@@ -1,0 +1,462 @@
+[
+  {
+    "ecosystem": "cargo",
+    "name": "alloc-stdlib",
+    "version": "0.3.0",
+    "license": "BSD-3-Clause",
+    "repository": "https://github.com/dropbox/rust-alloc-no-stdlib",
+    "revision": "0a81fd6928ea3b33c8cd484aa4575d50ffb98012",
+    "provenance": [
+      {
+        "url": "https://static.crates.io/crates/alloc-stdlib/alloc-stdlib-0.3.0.crate",
+        "revision_metadata": {
+          "git": {
+            "sha1": "0a81fd6928ea3b33c8cd484aa4575d50ffb98012"
+          },
+          "path_in_vcs": "alloc-stdlib"
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/cargo/alloc-stdlib-0.3.0/upstream-LICENSE",
+        "sha256": "c0c56f26d9c051cac4d200c34c84e7ae9aaa853e01a982a1df08b09931e518ae",
+        "url": "https://raw.githubusercontent.com/dropbox/rust-alloc-no-stdlib/0a81fd6928ea3b33c8cd484aa4575d50ffb98012/LICENSE"
+      }
+    ]
+  },
+  {
+    "ecosystem": "cargo",
+    "name": "dlopen2",
+    "version": "0.8.2",
+    "license": "MIT",
+    "repository": "https://github.com/OpenByteDev/dlopen2",
+    "revision": "cc80e4a0a90d499b677fdf7743699b4b3a43a989",
+    "provenance": [
+      {
+        "url": "https://static.crates.io/crates/dlopen2/dlopen2-0.8.2.crate",
+        "revision_metadata": {
+          "git": {
+            "sha1": "cc80e4a0a90d499b677fdf7743699b4b3a43a989"
+          },
+          "path_in_vcs": "dlopen2"
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/cargo/dlopen2-0.8.2/upstream-LICENSE",
+        "sha256": "39fa265207450e77c62e90c5594a06c085b655d8374c7ced4bf7894b6bd95dd2",
+        "url": "https://raw.githubusercontent.com/OpenByteDev/dlopen2/cc80e4a0a90d499b677fdf7743699b4b3a43a989/LICENSE"
+      }
+    ]
+  },
+  {
+    "ecosystem": "cargo",
+    "name": "dlopen2_derive",
+    "version": "0.4.3",
+    "license": "MIT",
+    "repository": "https://github.com/OpenByteDev/dlopen2",
+    "revision": "cc80e4a0a90d499b677fdf7743699b4b3a43a989",
+    "provenance": [
+      {
+        "url": "https://static.crates.io/crates/dlopen2_derive/dlopen2_derive-0.4.3.crate",
+        "revision_metadata": {
+          "git": {
+            "sha1": "cc80e4a0a90d499b677fdf7743699b4b3a43a989"
+          },
+          "path_in_vcs": "dlopen2-derive"
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/cargo/dlopen2_derive-0.4.3/upstream-LICENSE",
+        "sha256": "39fa265207450e77c62e90c5594a06c085b655d8374c7ced4bf7894b6bd95dd2",
+        "url": "https://raw.githubusercontent.com/OpenByteDev/dlopen2/cc80e4a0a90d499b677fdf7743699b4b3a43a989/LICENSE"
+      }
+    ]
+  },
+  {
+    "ecosystem": "cargo",
+    "name": "libappindicator-sys",
+    "version": "0.9.0",
+    "license": "Apache-2.0 OR MIT",
+    "repository": "https://github.com/tauri-apps/libappindicator-rs",
+    "revision": "eafd1e3682a1247f595410266091e9684021cb6f",
+    "provenance": [
+      {
+        "url": "https://static.crates.io/crates/libappindicator-sys/libappindicator-sys-0.9.0.crate",
+        "revision_metadata": {
+          "git": {
+            "sha1": "eafd1e3682a1247f595410266091e9684021cb6f"
+          },
+          "path_in_vcs": "sys"
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/cargo/libappindicator-sys-0.9.0/upstream-LICENSE-MIT",
+        "sha256": "eb227437252b2a7a9c1fc342c93ade1f3d7ce38cc6dd754f613db07d53ceff0b",
+        "url": "https://raw.githubusercontent.com/tauri-apps/libappindicator-rs/eafd1e3682a1247f595410266091e9684021cb6f/LICENSE-MIT"
+      },
+      {
+        "path": "texts/cargo/libappindicator-sys-0.9.0/upstream-LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "url": "https://raw.githubusercontent.com/tauri-apps/libappindicator-rs/eafd1e3682a1247f595410266091e9684021cb6f/LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "ecosystem": "cargo",
+    "name": "selectors",
+    "version": "0.38.0",
+    "license": "MPL-2.0",
+    "repository": "https://github.com/servo/stylo",
+    "revision": "572ecba2d1600e7c3d490586692a209faf703baa",
+    "provenance": [
+      {
+        "url": "https://static.crates.io/crates/selectors/selectors-0.38.0.crate",
+        "revision_metadata": {
+          "git": {
+            "sha1": "572ecba2d1600e7c3d490586692a209faf703baa"
+          },
+          "path_in_vcs": "selectors"
+        }
+      },
+      {
+        "note": "License URL referenced by pinned upstream source/README; retrieved 2026-11-04, content hash pinned, URL itself mutable."
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/cargo/selectors-0.38.0/upstream-selectors__lib.rs",
+        "sha256": "d54c6e13e9e952dac17d209171df8657e3cae93beaddace4906150cdec8d02e9",
+        "url": "https://raw.githubusercontent.com/servo/stylo/572ecba2d1600e7c3d490586692a209faf703baa/selectors/lib.rs"
+      },
+      {
+        "path": "texts/cargo/selectors-0.38.0/linked-MPL-2.0.txt",
+        "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+        "url": "https://www.mozilla.org/media/MPL/2.0/index.815ca599c9df.txt"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@esbuild/linux-x64",
+    "version": "0.28.2",
+    "license": "MIT",
+    "repository": "https://github.com/evanw/esbuild",
+    "revision": "609683d892977362a0f99026cb74b96263d728a9",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/@esbuild/linux-x64/0.28.2",
+        "dist": {
+          "shasum": "268b36211c146ca54f8fe12c578a8d6ef8979485",
+          "tarball": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.28.2.tgz",
+          "fileCount": 3,
+          "integrity": "sha512-4xTZr1FUmSoQW4XIWmit3tzQrUTZM+N3P0XV8xROKYF50XfI7xeO90+1bZvNwxIufQ9hDQVRJH5YhgPVF8A/HQ==",
+          "signatures": [
+            {
+              "sig": "MEQCIBpiCbfJqHq0EVLd37+lOt0WSZdFMcpRlki2KbAaJBIcAiBQ5JjxOFu6I7EYzb2BZZt/pOB96qt8+yHU9GXHeo2xbQ==",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "sig": "MEQCIEf+Y2oYLmTsKe1fQfg72RzhNKl2d09aqHAp0MpXk5aeAiBgmVKYjlqsU4rM0dImyy7Z8xXwpnLDV6i+ng4PRqWW1g==",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/@esbuild%2flinux-x64@0.28.2",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 11428465
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/@esbuild__linux-x64-0.28.2/upstream-LICENSE.md",
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/LICENSE.md"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@humanfs/types",
+    "version": "0.15.0",
+    "license": "Apache-2.0",
+    "repository": "https://github.com/humanwhocodes/humanfs",
+    "revision": "85069f193cbacc371c3beb649ce746f8c5a493be",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/@humanfs/types/0.15.0",
+        "dist": {
+          "shasum": "f2a09f62012390b2bff3fc6fb248ddec8c09a090",
+          "tarball": "https://registry.npmjs.org/@humanfs/types/-/types-0.15.0.tgz",
+          "fileCount": 5,
+          "integrity": "sha512-ZZ1w0aoQkwuUuC7Yf+7sdeaNfqQiiLcSRbfI08oAxqLtpXQr9AIVX7Ay7HLDuiLYAaFPu8oBYNq/QIi9URHJ3Q==",
+          "signatures": [
+            {
+              "sig": "MEQCIFLm7AMjelvrWqn3KJWIgonGt7uKmKWObl7gDlFVXPaBAiBIWzpew/xneJt8DWRtu56KPij+fqG7e40bJIPnDdY9MA==",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ],
+          "unpackedSize": 15241
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/@humanfs__types-0.15.0/upstream-packages__core__LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "url": "https://raw.githubusercontent.com/humanwhocodes/humanfs/85069f193cbacc371c3beb649ce746f8c5a493be/packages/core/LICENSE"
+      }
+    ],
+    "qualification": "Sibling core LICENSE at exact repository revision is contextual evidence only; types scope lacks explicit upstream license text. Apache-2.0 package declaration verified; clearance unresolved."
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@rollup/rollup-linux-x64-gnu",
+    "version": "4.67.5",
+    "license": "MIT",
+    "repository": "https://github.com/rollup/rollup",
+    "revision": "6b1937666ffaffd346992115283d63336bd2464a",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/4.67.5",
+        "dist": {
+          "shasum": "07b8f2c8c2a9d8b580c7835d49bebc89d193ce18",
+          "tarball": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.67.5.tgz",
+          "fileCount": 3,
+          "integrity": "sha512-HmEfNh5Cdd/NHxgqwMzKnjlvicQQA+D+w+vQXDJSV0x/aHiQSjVwh1Th5RoA7QsMieIaxibt/5iJq68BraTSUg==",
+          "signatures": [
+            {
+              "sig": "MEUCIQCfLPX+6Y+OCCeBGS1274ImqaQAQeLn5/7KnEdljMIUggIgASOqdXp5y3bGs2r5uHxXcM5ND6mXB44Kb/aJLki26fo=",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "sig": "MEUCIQD84PZ4FA/tx9IrdB32zg21nr4vhe3BdPopqm2SYr1k7wIgKBfE8OZQ2IDdl4bGF5YjpOcAw2yQOj6a2+m95SGKxyo=",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/@rollup%2frollup-linux-x64-gnu@4.67.5",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 2187199
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/@rollup__rollup-linux-x64-gnu-4.67.5/upstream-LICENSE.md",
+        "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+        "url": "https://raw.githubusercontent.com/rollup/rollup/6b1937666ffaffd346992115283d63336bd2464a/LICENSE.md"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@tauri-apps/cli-linux-x64-gnu",
+    "version": "2.12.4",
+    "license": "Apache-2.0 OR MIT",
+    "repository": "https://github.com/tauri-apps/tauri",
+    "revision": "993038c49185307dfc895ab7657d77ca0d5ed7c7",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/@tauri-apps/cli-linux-x64-gnu/2.12.4",
+        "dist": {
+          "shasum": "0dbabc5df1db3a9c48298fb6061a1979a6886941",
+          "tarball": "https://registry.npmjs.org/@tauri-apps/cli-linux-x64-gnu/-/cli-linux-x64-gnu-2.12.4.tgz",
+          "fileCount": 3,
+          "integrity": "sha512-tNzZSa79Z1nRpHxEpQ38lsAFpKlFlYvoXzjTV+lRRn/zSf3wrdUC3wnLcq2XEadchPu4ttK0zivhYzr+XGD19Q==",
+          "signatures": [
+            {
+              "sig": "MEUCIBDmG8LxvLb87byDq6yTXjCXDn4dYpLw7KcpVRTGFrAQAiEA9akvvAV0WALThqe1BTf2FPpmGThT7G0oB1lD5Sc/txQ=",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "sig": "MEQCIFozohi52CnuUFY8srkDlq4HpnhU+N7OJzbGE677iuAIAiAdF/crQP0sgSpZT/bDxyS3+yKRcFLLnjeueCA7f8/FAg==",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/@tauri-apps%2fcli-linux-x64-gnu@2.12.4",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 19882694
+        }
+      },
+      {
+        "tag": "tauri-cli-v2.12.4",
+        "resolved_commit": "993038c49185307dfc895ab7657d77ca0d5ed7c7"
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/@tauri-apps__cli-linux-x64-gnu-2.12.4/upstream-LICENSE-MIT",
+        "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+        "url": "https://raw.githubusercontent.com/tauri-apps/tauri/993038c49185307dfc895ab7657d77ca0d5ed7c7/LICENSE-MIT"
+      },
+      {
+        "path": "texts/npm/@tauri-apps__cli-linux-x64-gnu-2.12.4/upstream-LICENSE-APACHE-2.0",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "url": "https://raw.githubusercontent.com/tauri-apps/tauri/993038c49185307dfc895ab7657d77ca0d5ed7c7/LICENSE-APACHE-2.0"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "esrecurse",
+    "version": "4.3.0",
+    "license": "BSD-2-Clause",
+    "repository": "https://github.com/estools/esrecurse",
+    "revision": "8ceb63797813d9ac69572a671b95cf58ffdf35b6",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/esrecurse/4.3.0",
+        "dist": {
+          "shasum": "7ad7964d679abb28bee72cec63758b1c5d2c9921",
+          "tarball": "https://registry.npmjs.org/esrecurse/-/esrecurse-4.3.0.tgz",
+          "fileCount": 5,
+          "integrity": "sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==",
+          "signatures": [
+            {
+              "sig": "MEQCIFhsVudxfufLwMI80sLozcVw5zKZf4ij0r95LyxjxilrAiBMN0PNPCNnzdzJtDZ0AmikWWw/ICqrK8oul9YKj1Cujg==",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ],
+          "unpackedSize": 13527,
+          "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfTT+5CRA9TVsSAnZWagAAqZkP/24w7D3ZHMmD+dW7rCVS\n8i7YBm2+jg6PfRb67h3kwcgRo9y26hc8BBhcNc5eueK8hoKSjy6bMbqo9rnY\nMLObuQWscdq+/1AWq6HCETp0vxqLglwyyWTWD8e8FBqiNx54XEYGm7S1lmOZ\nYswD4E4dW99PRmer39hKUeg1N5a1xNhT3TyxUrRrml7/4Zt1rZHg3cDbkvfI\n4WU8S340Uor9C2erDOpqBmcSKxjzbqbHsVZImMGhPyzHghxldCQQQ0TpDrZS\nCZL5F7TZysCE43YISxIM108f5BbTLAVzPiOaUNxzVynimqHPXWUHVGAINBF2\nAmWL1aNAhqJxxWwiPrwfWMsB6lC+DxewR0wlOH7PdsLDJORPygWDGFuNf78U\ngkBlNAWPslkhJ5XjS8zNMR5DaheENmJiMzZjvR+xSoKERlDzl7jFkiG0acJ1\nlGvHz3RtegI1X1Cyd81rejOO5mgrAUKHkbFScrf7dt1d3qmgd7cWlnmreLvf\ngZEHzcCoCD+dn9EH3VGHgU07Pi4HpC97I0m3MzNwK/bYOJvJqQ2hwkni6mrm\nqTXpAyv6Kdb8wOdXErPo8JmPj/jlH4/doCvteLilDF4ZCak1R21vw3+YHW8Y\nfpI4F+hEWnxtNSgQS8q8LDCWoO6Er98h/CqEmPQWqgz6rMj5uK25lFvdmuqh\nNiew\r\n=cq0F\r\n-----END PGP SIGNATURE-----\r\n"
+        }
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/esrecurse-4.3.0/upstream-README.md",
+        "sha256": "a7007c78c9d9da690ef6cdb0e7a3427d05832edb00abd1f5a9882700d73be4ad",
+        "url": "https://raw.githubusercontent.com/estools/esrecurse/8ceb63797813d9ac69572a671b95cf58ffdf35b6/README.md"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imurmurhash",
+    "version": "0.1.4",
+    "license": "MIT",
+    "repository": "https://github.com/jensyt/imurmurhash-js",
+    "revision": "9f40361c7e2835a9b7b8eaa1cbab2a9f94ee22a2",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/imurmurhash/0.1.4",
+        "dist": {
+          "shasum": "9218b9b2b928a238b13dc4fb6b6d576f231453ea",
+          "tarball": "https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz",
+          "integrity": "sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==",
+          "signatures": [
+            {
+              "sig": "MEQCIDBYV53bBFjsfNsa4u6aXAPKZ+9co9516ZzIbyHU6H9GAiBXXkJRFrbyt8Y2KjDxx6KfZb8DhPxQB/BkZd2wnfAMEg==",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ]
+        }
+      },
+      {
+        "tag": "0.1.4",
+        "resolved_commit": "9f40361c7e2835a9b7b8eaa1cbab2a9f94ee22a2"
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/imurmurhash-0.1.4/upstream-LICENSE",
+        "sha256": "fa0943ddcaa857d901a9eb92254d89876297ecdfbc884d294a927df08ebcbbe8",
+        "url": "https://raw.githubusercontent.com/jensyt/imurmurhash-js/9f40361c7e2835a9b7b8eaa1cbab2a9f94ee22a2/LICENSE"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "keyv",
+    "version": "4.5.4",
+    "license": "MIT",
+    "repository": "https://github.com/jaredwray/keyv",
+    "revision": "a4272b2a47f31d7248080dc72c08421d2ef0b663",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/keyv/4.5.4",
+        "dist": {
+          "shasum": "a879a99e29452f942439f2a405e3af8b31d4de93",
+          "tarball": "https://registry.npmjs.org/keyv/-/keyv-4.5.4.tgz",
+          "fileCount": 6,
+          "integrity": "sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==",
+          "signatures": [
+            {
+              "sig": "MEUCIFXCz2pv9p8Kh/Wv6ymxIRKYcY3kCH3Gik7kKWpdDllQAiEA52qU4jmbB8gbNL8i7CCryMmUpJrQD/YZKQmDGAQozcw=",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ],
+          "unpackedSize": 27751
+        }
+      },
+      {
+        "method": "release-time candidate; byte-identical published src/index.js and src/index.d.ts",
+        "commit": "a4272b2a47f31d7248080dc72c08421d2ef0b663"
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/keyv-4.5.4/upstream-LICENSE",
+        "sha256": "1f7dca26d2d328c3dbb9b6fe3b15ec3cda08ffe2288e47b73d617454b256f959",
+        "url": "https://raw.githubusercontent.com/jaredwray/keyv/a4272b2a47f31d7248080dc72c08421d2ef0b663/LICENSE"
+      }
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "natural-compare",
+    "version": "1.4.0",
+    "license": "MIT",
+    "repository": "https://github.com/litejs/natural-compare-lite",
+    "revision": "eec83eee67cfac84d6db30cdd65363f155673770",
+    "provenance": [
+      {
+        "url": "https://registry.npmjs.org/natural-compare/1.4.0",
+        "dist": {
+          "shasum": "4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7",
+          "tarball": "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz",
+          "integrity": "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==",
+          "signatures": [
+            {
+              "sig": "MEQCIHPq/XTtCMobyEA0cLLz+01T37O31Niib31kV74IvyvmAiBNo0BZ6FecUm1NonpCwsOAJZjtT1NP6AS9DDWUE9klcQ==",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ]
+        }
+      },
+      {
+        "note": "License URL referenced by pinned upstream source/README; retrieved 2026-11-04, content hash pinned, URL itself mutable."
+      }
+    ],
+    "notices": [
+      {
+        "path": "texts/npm/natural-compare-1.4.0/upstream-README.md",
+        "sha256": "9a97891a8e69da238853b1a512ae6ea8797072e9aad5bb25449b798deaab986e",
+        "url": "https://raw.githubusercontent.com/litejs/natural-compare-lite/eec83eee67cfac84d6db30cdd65363f155673770/README.md"
+      },
+      {
+        "path": "texts/npm/natural-compare-1.4.0/linked-author-MIT.txt",
+        "sha256": "353fe762ba595bf1ffe786acf0f5984bb164205901d74f258af195fc8228c67d",
+        "url": "https://lauri.rooden.ee/mit-license.txt"
+      }
+    ]
+  }
+]

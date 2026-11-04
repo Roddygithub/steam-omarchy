@@ -1,0 +1,9 @@
+design/final/assets/local/
+node_modules/
+dist/
+src-tauri/target/
+public/demo/
+
+release/
+
+src-tauri/gen/

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Steam Omarchy (experimental)
+Comment=Unofficial local library browser
+Exec=steam-omarchy
+Icon=steam-omarchy
+Categories=Game;
+Terminal=false

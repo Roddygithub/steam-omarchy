@@ -1,0 +1,29 @@
+{
+  "name": "steam-omarchy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "tauri": "tauri",
+    "release": "bash scripts/release.sh"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5",
+    "vite": "^7",
+    "eslint": "^9",
+    "typescript-eslint": "^8"
+  },
+  "license": "MIT"
+}
