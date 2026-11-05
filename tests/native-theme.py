@@ -10,6 +10,7 @@ import sys
 import tempfile
 import threading
 import time
+from native_lifecycle import close_fixture
 
 ROLES = {'surface', 'foreground', 'accent', 'muted', 'border', 'focus'}
 LAST_VALID = 'Thème invalide : dernière palette conservée'
@@ -55,12 +56,12 @@ with tempfile.TemporaryDirectory(prefix='steam-native-qa-') as tmp:
     env.update(GDK_BACKEND='broadway', BROADWAY_DISPLAY=':73', NO_AT_BRIDGE='1')
     events = queue.Queue()
     with (out/'broadway.log').open('w') as log, (out/'app.log').open('w') as app_log:
-        daemon = subprocess.Popen(['/usr/bin/broadwayd','--address=127.0.0.1','--port=8153',':73'], env=env, stdout=log, stderr=log)
+        daemon = subprocess.Popen(['/usr/bin/broadwayd','--address=127.0.0.1','--port=8153',':73'], env=env, stdout=log, stderr=log, start_new_session=True)
         app = None
         try:
             time.sleep(.5)
             assert daemon.poll() is None, 'Broadway bind failed'
-            app = subprocess.Popen([str(Path(sys.argv[1]).resolve())], env=env, stdout=subprocess.PIPE, stderr=app_log, text=True)
+            app = subprocess.Popen([str(Path(sys.argv[1]).resolve())], env=env, stdout=subprocess.PIPE, stderr=app_log, text=True, start_new_session=True)
             def collect():
                 for line in app.stdout:
                     app_log.write(line); app_log.flush()
@@ -105,5 +106,4 @@ with tempfile.TemporaryDirectory(prefix='steam-native-qa-') as tmp:
             (out/'measurements.json').write_text(json.dumps(measurements,indent=2))
             print('PASS actual React unmount/unlisten and native window close',flush=True)
         finally:
-            if app and app.poll() is None: app.terminate();app.wait(timeout=5)
-            daemon.terminate();daemon.wait(timeout=5)
+            close_fixture(app, daemon, root/'config')

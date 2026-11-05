@@ -1,11 +1,11 @@
 {
-  "source_commit": "92e035faf330abd915542db303b333a062b87d06",
+  "source_commit": "f4f460d5b5bab376928a659a283d41aecb4992b6",
   "status": "NOT_READY_PENDING_INDEPENDENT_AUDIT",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
-      "source_sha256": "f2a935ed32191cd96129d8c7b58e0f879a0b8df98e1fb3c956a8f5e118c5902a",
-      "export_sha256": "f2a935ed32191cd96129d8c7b58e0f879a0b8df98e1fb3c956a8f5e118c5902a",
+      "source_sha256": "1b6354aa56671d0bfa9c27cf527e5577bf5bc90dc7e18289ad322297d6b8e3db",
+      "export_sha256": "1b6354aa56671d0bfa9c27cf527e5577bf5bc90dc7e18289ad322297d6b8e3db",
       "transformation": "none"
     },
     {
@@ -4005,6 +4005,12 @@
       "transformation": "none"
     },
     {
+      "path": "scripts/check-collections-browser.js",
+      "source_sha256": "620f8100962250335350a9059ff68ade372c4c4a5fc40120056583d5d34ff39a",
+      "export_sha256": "620f8100962250335350a9059ff68ade372c4c4a5fc40120056583d5d34ff39a",
+      "transformation": "none"
+    },
+    {
       "path": "scripts/check.sh",
       "source_sha256": "05e419d91b4f3760523a6601dbceecb2ba4c7019f769c267036a5fe184f1ba1f",
       "export_sha256": "05e419d91b4f3760523a6601dbceecb2ba4c7019f769c267036a5fe184f1ba1f",
@@ -4030,8 +4036,8 @@
     },
     {
       "path": "scripts/public-allowlist.json",
-      "source_sha256": "a54a6730f305d6de54aec59c4636d11c2083f24fde96f1545995ba167f4f5c34",
-      "export_sha256": "a54a6730f305d6de54aec59c4636d11c2083f24fde96f1545995ba167f4f5c34",
+      "source_sha256": "f7c65323645d78bac665ff31ae789ea0b33b5c9764d6b855059c5ad605764906",
+      "export_sha256": "f7c65323645d78bac665ff31ae789ea0b33b5c9764d6b855059c5ad605764906",
       "transformation": "none"
     },
     {
@@ -4059,6 +4065,12 @@
       "transformation": "none"
     },
     {
+      "path": "scripts/test-collections.mjs",
+      "source_sha256": "1d6dd72b4cfc852a6432fb826c96a76dc27fab7c1621bb2a6f90c3b5f40f6aff",
+      "export_sha256": "1d6dd72b4cfc852a6432fb826c96a76dc27fab7c1621bb2a6f90c3b5f40f6aff",
+      "transformation": "none"
+    },
+    {
       "path": "scripts/test-export.py",
       "source_sha256": "217d64168307907d4957587a69793bfabff188cfdc8d627ef72b67a7b3fad757",
       "export_sha256": "217d64168307907d4957587a69793bfabff188cfdc8d627ef72b67a7b3fad757",
@@ -4074,6 +4086,12 @@
       "path": "scripts/test-regressions.sh",
       "source_sha256": "057b32e802b70131a6eb7a171620ec15221286545d53ec73620687d2a7df8222",
       "export_sha256": "057b32e802b70131a6eb7a171620ec15221286545d53ec73620687d2a7df8222",
+      "transformation": "none"
+    },
+    {
+      "path": "scripts/test-routing.mjs",
+      "source_sha256": "bffa250c1543d10926b6d02a668d68675e5940e691a32138170bad260bb4e85d",
+      "export_sha256": "bffa250c1543d10926b6d02a668d68675e5940e691a32138170bad260bb4e85d",
       "transformation": "none"
     },
     {
@@ -4167,6 +4185,12 @@
       "transformation": "none"
     },
     {
+      "path": "src/Collections.tsx",
+      "source_sha256": "a5b73bfe4f09b50c5d6112460d9ca062fdc1a7b3c0919c1aa8a13ada26d1ef95",
+      "export_sha256": "a5b73bfe4f09b50c5d6112460d9ca062fdc1a7b3c0919c1aa8a13ada26d1ef95",
+      "transformation": "none"
+    },
+    {
       "path": "src/Menu.tsx",
       "source_sha256": "b8be24a377847ddb6c71668c9da89221f98988e52b006bb56fc94deace50ee20",
       "export_sha256": "b8be24a377847ddb6c71668c9da89221f98988e52b006bb56fc94deace50ee20",
@@ -4174,20 +4198,20 @@
     },
     {
       "path": "src/cinematic.css",
-      "source_sha256": "893468cfeec7c7206ff2ede5c409ea8b30d3b5f23beddc1f0ed2d40b6bb85774",
-      "export_sha256": "893468cfeec7c7206ff2ede5c409ea8b30d3b5f23beddc1f0ed2d40b6bb85774",
+      "source_sha256": "0d1ad95c148797e7faced4356e8a3605203c4cb51eea82ad2f3885839257dcb9",
+      "export_sha256": "0d1ad95c148797e7faced4356e8a3605203c4cb51eea82ad2f3885839257dcb9",
       "transformation": "none"
     },
     {
       "path": "src/main.tsx",
-      "source_sha256": "c9b97ef259e48486674a9384a4f8968b13628a4f700f5c58b58f0f910620651e",
-      "export_sha256": "c9b97ef259e48486674a9384a4f8968b13628a4f700f5c58b58f0f910620651e",
+      "source_sha256": "faa0781266a516d14dac36c3ee7f9b5993a8946e27c788dbc948fd339fac11ad",
+      "export_sha256": "faa0781266a516d14dac36c3ee7f9b5993a8946e27c788dbc948fd339fac11ad",
       "transformation": "none"
     },
     {
       "path": "src/preferences.ts",
-      "source_sha256": "563ad3a871a8ea3c07fa867b60323d2f947a41ca78a7343e1bb3caafc42d3c31",
-      "export_sha256": "563ad3a871a8ea3c07fa867b60323d2f947a41ca78a7343e1bb3caafc42d3c31",
+      "source_sha256": "d2cc7b8df78061133bf2c6fac062821378d72d60e04a04ebb5998ccf0924bc32",
+      "export_sha256": "d2cc7b8df78061133bf2c6fac062821378d72d60e04a04ebb5998ccf0924bc32",
       "transformation": "none"
     },
     {
@@ -4228,8 +4252,20 @@
     },
     {
       "path": "tests/native-theme.py",
-      "source_sha256": "5daf8d0e00d27e3113a2b90665ee528365754948b03e6ae4ffd0f3f200f6f2dc",
-      "export_sha256": "5daf8d0e00d27e3113a2b90665ee528365754948b03e6ae4ffd0f3f200f6f2dc",
+      "source_sha256": "e562f50d92aae7666ea87c034815fabbda761013b9b21f9fc77aeb183f33d428",
+      "export_sha256": "e562f50d92aae7666ea87c034815fabbda761013b9b21f9fc77aeb183f33d428",
+      "transformation": "none"
+    },
+    {
+      "path": "tests/native_lifecycle.py",
+      "source_sha256": "4fd68c328290443690aaa604c4ccea5e5851d950896c3752e9b456a89a7bc85a",
+      "export_sha256": "4fd68c328290443690aaa604c4ccea5e5851d950896c3752e9b456a89a7bc85a",
+      "transformation": "none"
+    },
+    {
+      "path": "tests/test_native_lifecycle.py",
+      "source_sha256": "af1d31cf19d425328b68047da5a96d1a9fa84d29550dbd6b460a5e738d0622c6",
+      "export_sha256": "af1d31cf19d425328b68047da5a96d1a9fa84d29550dbd6b460a5e738d0622c6",
       "transformation": "none"
     },
     {
