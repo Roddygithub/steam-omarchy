@@ -7,3 +7,6 @@ public/demo/
 release/
 
 src-tauri/gen/
+
+# Private, read-only upstream research checkout
+/upstream/omarchy-proposal/
