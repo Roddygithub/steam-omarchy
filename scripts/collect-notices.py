@@ -55,8 +55,8 @@ def collect(ecosystem, name, version, license, source, directory, usage):
         source=source, usage=usage, notices=notices, status=('EVIDENCE_SCOPE_REVIEW_REQUIRED' if entry and entry.get('qualification') else 'COLLECTED_REVIEW_REQUIRED') if notices and license else 'MISSING'))
 
 for p in meta['packages']:
-    if p['id'] in resolved and p['source']:
-        collect('cargo', p['name'], p['version'], p['license'], p['source'], Path(p['manifest_path']).parent,
+    if p['id'] in resolved and (p['source'] or p['name'] == 'glib'):
+        collect('cargo', p['name'], p['version'], p['license'], p['source'] or 'vendored glib 0.18.5; docs/security/RUSTSEC-TRIAGE.md', Path(p['manifest_path']).parent,
                 'Linux resolved graph; build/runtime classification pending binary review')
 lock = json.loads((root/'package-lock.json').read_text())
 for path, p in lock['packages'].items():

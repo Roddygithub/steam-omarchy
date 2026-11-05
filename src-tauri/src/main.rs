@@ -208,6 +208,37 @@ fn launch_status(app_id: String) -> Result<bool, String> {
     }
     Ok(false)
 }
+// Test-only fixed telemetry and close; no paths or evaluation accepted over IPC.
+#[cfg(feature = "native-qa")]
+#[tauri::command]
+fn native_qa_report(value: serde_json::Value) -> Result<(), String> {
+    let serialized = validate_native_qa_report(&value)?;
+    println!("NATIVE_QA {}", serialized);
+    Ok(())
+}
+#[cfg(feature = "native-qa")]
+fn validate_native_qa_report(value: &serde_json::Value) -> Result<String, String> {
+    if !value.is_object() {
+        return Err("QA report must be an object".into());
+    }
+    let records = value
+        .get("records")
+        .and_then(serde_json::Value::as_array)
+        .ok_or("QA report records must be an array")?;
+    if records.len() > 64 {
+        return Err("QA report exceeds 64 records".into());
+    }
+    let serialized = serde_json::to_string(value).map_err(|e| e.to_string())?;
+    if serialized.len() > 65536 {
+        return Err("QA report exceeds 64 KiB".into());
+    }
+    Ok(serialized)
+}
+#[cfg(feature = "native-qa")]
+#[tauri::command]
+fn native_qa_close(window: tauri::WebviewWindow) {
+    let _ = window.close();
+}
 fn main() {
     // WebKitGTK DMA-BUF fails on the host NVIDIA/Wayland stack; override remains possible.
     if std::env::var_os("WEBKIT_DISABLE_DMABUF_RENDERER").is_none() {
@@ -231,26 +262,43 @@ fn main() {
         );
         return;
     }
-    tauri::Builder::default()
-        .setup(|app| {
-            let handle = app.app_handle().clone();
-            app.manage(std::sync::Mutex::new(theme_watch::Worker::start(
-                move |t| {
-                    let _ = handle.emit("theme-changed", t);
-                },
-            )));
-            Ok(())
-        })
-        .invoke_handler(tauri::generate_handler![
-            scan_catalog,
-            read_theme,
-            artwork,
-            load_preferences,
-            save_preferences,
-            request_launch,
-            launch_status,
-            open_steam
-        ])
+    let builder = tauri::Builder::default();
+    #[cfg(feature = "native-qa")]
+    let builder = builder.append_invoke_initialization_script(include_str!("native_qa.js"));
+    let builder = builder.setup(|app| {
+        let handle = app.app_handle().clone();
+        app.manage(std::sync::Mutex::new(theme_watch::Worker::start(
+            move |t| {
+                let _ = handle.emit("theme-changed", t);
+            },
+        )));
+        Ok(())
+    });
+    #[cfg(not(feature = "native-qa"))]
+    let builder = builder.invoke_handler(tauri::generate_handler![
+        scan_catalog,
+        read_theme,
+        artwork,
+        load_preferences,
+        save_preferences,
+        request_launch,
+        launch_status,
+        open_steam
+    ]);
+    #[cfg(feature = "native-qa")]
+    let builder = builder.invoke_handler(tauri::generate_handler![
+        scan_catalog,
+        read_theme,
+        artwork,
+        load_preferences,
+        save_preferences,
+        request_launch,
+        launch_status,
+        open_steam,
+        native_qa_report,
+        native_qa_close
+    ]);
+    builder
         .build(tauri::generate_context!())
         .expect("Impossible de démarrer Steam Omarchy")
         .run(|app, event| {
@@ -314,5 +362,22 @@ mod preference_tests {
         write_preferences(&p, &serde_json::json!({"favorites":["440"]})).unwrap();
         assert_eq!(read_preferences(&p).unwrap()["favorites"][0], "440");
         fs::remove_dir_all(dir).unwrap();
+    }
+}
+
+#[cfg(all(test, feature = "native-qa"))]
+mod native_qa_tests {
+    use super::validate_native_qa_report;
+    use serde_json::json;
+    #[test]
+    fn report_bounds() {
+        assert!(validate_native_qa_report(&json!({"records": []})).is_ok());
+        assert!(validate_native_qa_report(&json!([])).is_err());
+        assert!(validate_native_qa_report(&json!({})).is_err());
+        assert!(validate_native_qa_report(&json!({"records": vec![0; 64]})).is_ok());
+        assert!(validate_native_qa_report(&json!({"records": vec![0; 65]})).is_err());
+        assert!(
+            validate_native_qa_report(&json!({"records": [], "text": "x".repeat(65536)})).is_err()
+        );
     }
 }

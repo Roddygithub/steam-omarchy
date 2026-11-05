@@ -10,3 +10,6 @@ src-tauri/gen/
 
 # Private, read-only upstream research checkout
 /upstream/omarchy-proposal/
+
+/target/
+**/__pycache__/

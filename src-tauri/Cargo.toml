@@ -12,3 +12,14 @@ serde_json = "1"
 toml = "0.8"
 base64 = "0.22"
 notify = "8"
+
+[features]
+default = []
+native-qa = []
+
+[dev-dependencies]
+glib = "=0.18.5"
+
+[patch.crates-io]
+# RUSTSEC-2024-0429: exact upstream out-pointer fix; see security triage.
+glib = { path = "../vendor/glib-0.18.5" }

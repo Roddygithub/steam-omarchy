@@ -1662,7 +1662,7 @@
     "name": "glib",
     "version": "0.18.5",
     "license": "MIT",
-    "source": "registry+https://github.com/rust-lang/crates.io-index",
+    "source": "vendored glib 0.18.5; docs/security/RUSTSEC-TRIAGE.md",
     "usage": "Linux resolved graph; build/runtime classification pending binary review",
     "notices": [
       {

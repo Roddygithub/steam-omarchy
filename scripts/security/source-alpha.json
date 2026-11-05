@@ -1,0 +1,77 @@
+{
+  "scope": "source-alpha",
+  "expires": "2026-12-05T00:00:00+00:00",
+  "files": {
+    "src-tauri/Cargo.lock": "6f099c2f6418482d32672572f7ca4c8b2ff1597f6bc2853b77b26b87fc23cec2",
+    "docs/security/glib-vendor-sha256.json": "3a316c1ab343b28d06a28d4a4ab0b8ab3be2ebfe4bd6c806ee7c9aca59260e65",
+    "scripts/verify-glib-vendor.py": "930f232d0c0bf6cf85f4409cbe76d28ba78b8dfdbc4912f73e4eaf77e8cd3fd2",
+    "src-tauri/tests/glib_variant_str_iter.rs": "4190376a9cfc71f7c88343567d49b28019c581b0ae0782aec9534e34bd50aa5c",
+    "src-tauri/Cargo.toml": "0e367bdc5dd612fb2fca53fcae2e3b758ae143c501ef31ae2f9ebb7ab4c2f369"
+  },
+  "advisories": {
+    "crates/proc-macro-error/RUSTSEC-2024-0370.md": "ea516b2cd02d3354cd6b707ff152f9c8de27c14c0f9ad5d9bb41198ef210a64c",
+    "crates/glib/RUSTSEC-2024-0429.md": "0c1ab1d4a0ebe5948e362728b31613ab588b84a0284dadbc119f7424fdd9c6d0"
+  },
+  "warning": {
+    "kind": "unmaintained",
+    "package": {
+      "name": "proc-macro-error",
+      "version": "1.0.4",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c",
+      "dependencies": [
+        {
+          "name": "proc-macro-error-attr",
+          "version": "1.0.4",
+          "source": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "proc-macro2",
+          "version": "1.0.107",
+          "source": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "quote",
+          "version": "1.0.47",
+          "source": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "syn",
+          "version": "1.0.109",
+          "source": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "version_check",
+          "version": "0.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index"
+        }
+      ],
+      "replace": null
+    },
+    "advisory": {
+      "id": "RUSTSEC-2024-0370",
+      "package": "proc-macro-error",
+      "title": "proc-macro-error is unmaintained",
+      "description": "proc-macro-error's maintainer seems to be unreachable, with no commits for 2 years, no releases pushed for 4 years, and no activity on the GitLab repo or response to email.\n\nproc-macro-error also depends on `syn 1.x`, which may be bringing duplicate dependencies into dependant build trees.\n\n## Possible Alternative(s)\n\n- [manyhow](https://crates.io/crates/manyhow)\n- [proc-macro2-diagnostics](https://github.com/SergioBenitez/proc-macro2-diagnostics)",
+      "date": "2024-09-01",
+      "aliases": [],
+      "related": [],
+      "collection": "crates",
+      "categories": [],
+      "keywords": [],
+      "cvss": null,
+      "informational": "unmaintained",
+      "references": [],
+      "source": null,
+      "url": "https://gitlab.com/CreepySkeleton/proc-macro-error/-/issues/20",
+      "withdrawn": null,
+      "license": "CC0-1.0",
+      "expect-deleted": false
+    },
+    "affected": null,
+    "versions": {
+      "patched": [],
+      "unaffected": []
+    }
+  }
+}

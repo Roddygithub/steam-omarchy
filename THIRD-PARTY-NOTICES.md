@@ -28,7 +28,13 @@ the author's copyright and links the author-hosted MIT text, separately hashed.
 Selectors' pinned source header points to the Mozilla MPL-2.0 text, also hashed.
 The registry/tag evidence and qualifications must travel with these texts.
 
-Source-only publication of original code and lockfiles does not redistribute
+The source export now includes the complete MIT-licensed GLib 0.18.5 crate
+with the upstream soundness correction. Its LICENSE and COPYRIGHT travel in
+`vendor/glib-0.18.5`; provenance and file hashes are in `docs/security/`.
+This is third-party source redistribution and requires preserving those notices.
+Independent security exception review remains pending.
+
+Publication of original code and lockfiles alone does not redistribute
 system DSOs or npm/Cargo package code. Preserve these notices when including the
 notice collection. It does not require a complete runtime DSO redistribution
 clearance. Independent review of the exact sanitized export remains required.

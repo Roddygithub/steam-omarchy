@@ -17,6 +17,8 @@ jobs:
       - run: rustup toolchain install 1.97.0 --profile minimal --component rustfmt --component clippy && rustup default 1.97.0
       - run: npm ci
       - run: npm run lint && npm run typecheck && npm run build
+      - run: node tests/native-qa.mjs
+      - run: python3 -m unittest discover -s scripts/security -p "test_*.py"
       - run: cargo fmt --manifest-path src-tauri/Cargo.toml -- --check
       - run: cargo clippy --locked --manifest-path src-tauri/Cargo.toml -- -D warnings
       - run: cargo test --locked --manifest-path src-tauri/Cargo.toml
@@ -24,4 +26,9 @@ jobs:
       - run: bash scripts/test-regressions.sh
       - run: python3 scripts/test-export.py
       - run: npm audit --audit-level=high
-      - run: cargo install cargo-audit --version 0.22.2 --locked && cargo audit --file src-tauri/Cargo.lock --deny warnings
+      - run: cargo install cargo-audit --version 0.22.2 --locked && python3 scripts/security/check.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: strict-rustsec-evidence
+          path: target/security/
