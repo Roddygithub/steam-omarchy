@@ -1,10 +1,11 @@
 mod catalog;
+mod launch;
 mod theme;
 mod theme_watch;
 use base64::Engine;
 use std::io::Write;
 use std::os::unix::fs::OpenOptionsExt;
-use std::{fs, path::PathBuf, process::Command};
+use std::{fs, path::PathBuf};
 use tauri::{Emitter, Manager};
 #[tauri::command]
 fn scan_catalog() -> catalog::Catalog {
@@ -73,18 +74,12 @@ fn write_preferences(p: &std::path::Path, value: &serde_json::Value) -> Result<(
     result.map_err(|_| "Sauvegarde préférences".into())
 }
 #[tauri::command]
-fn request_launch(app_id: String) -> Result<String, String> {
-    if !catalog::valid_id(&app_id) || !scan_catalog().entries.iter().any(|e| e.app_id == app_id) {
-        return Err("AppID hors catalogue".into());
-    }
-    let status = Command::new("xdg-open")
-        .arg(format!("steam://run/{app_id}"))
-        .status()
-        .map_err(|_| "Gestionnaire Steam indisponible")?;
-    if !status.success() {
-        return Err("Gestionnaire Steam en échec".into());
-    }
-    Ok("Demande remise à Steam · exécution non confirmée".into())
+async fn request_launch(app_id: String) -> Result<String, String> {
+    tauri::async_runtime::spawn_blocking(move || {
+        launch::request(&app_id, &scan_catalog(), launch::open)
+    })
+    .await
+    .map_err(|_| "Traitement Steam interrompu")?
 }
 // Only exact destinations shipped by the installed official Steam desktop launcher.
 fn steam_destination(action: &str, app_id: Option<&str>) -> Result<String, String> {
@@ -106,26 +101,25 @@ fn steam_destination(action: &str, app_id: Option<&str>) -> Result<String, Strin
     }
 }
 #[tauri::command]
-fn open_steam(action: String, app_id: Option<String>) -> Result<String, String> {
-    let uri = steam_destination(&action, app_id.as_deref())?;
-    if let Some(id) = app_id {
-        if !scan_catalog().entries.iter().any(|e| e.app_id == id) {
-            return Err("AppID hors catalogue".into());
+async fn open_steam(action: String, app_id: Option<String>) -> Result<String, String> {
+    tauri::async_runtime::spawn_blocking(move || {
+        let uri = steam_destination(&action, app_id.as_deref())?;
+        if let Some(id) = app_id {
+            if !scan_catalog().entries.iter().any(|e| e.app_id == id) {
+                return Err("AppID hors catalogue".into());
+            }
         }
-    }
-    let status = Command::new("xdg-open")
-        .arg(uri)
-        .status()
-        .map_err(|_| "Gestionnaire Steam indisponible")?;
-    if !status.success() {
-        return Err("Gestionnaire Steam en échec".into());
-    }
-    Ok("Ouverture remise à Steam · affichage non confirmé".into())
+        launch::open(&uri)?;
+        Ok("Ouverture remise à Steam · affichage non confirmé".into())
+    })
+    .await
+    .map_err(|_| "Traitement Steam interrompu")?
 }
+
 #[test]
 fn destinations_are_closed() {
-    assert!(open_steam("steam://run/440".into(), None).is_err());
-    assert!(open_steam("store".into(), Some("440;id".into())).is_err());
+    assert!(steam_destination("steam://run/440", None).is_err());
+    assert!(steam_destination("store", Some("440;id")).is_err());
     for action in [
         "settings",
         "downloads",
@@ -157,56 +151,13 @@ fn destinations_are_closed() {
     );
     assert!(steam_destination("settings", Some("440")).is_err());
 }
-// Only inspect command names related to this game's install directory before reading the two AppID fields.
 #[tauri::command]
-fn launch_status(app_id: String) -> Result<bool, String> {
-    if !catalog::valid_id(&app_id) {
-        return Err("AppID invalide".into());
-    }
-    let catalog = scan_catalog();
-    let Some(game) = catalog.entries.iter().find(|e| e.app_id == app_id) else {
-        return Ok(false);
-    };
-    let Ok(dir) = fs::read_dir("/proc") else {
-        return Ok(false);
-    };
-    for e in dir.flatten() {
-        if !e
-            .file_name()
-            .to_string_lossy()
-            .bytes()
-            .all(|b| b.is_ascii_digit())
-        {
-            continue;
-        }
-        let p = e.path();
-        let Ok(cmd) = catalog::bounded(&p.join("cmdline"), 65536) else {
-            continue;
-        };
-        let args: Vec<&[u8]> = cmd.split(|b| *b == 0).collect();
-        if args
-            .windows(2)
-            .any(|a| a[0] == b"-applaunch" && a[1] == app_id.as_bytes())
-        {
-            continue;
-        }
-        if !args.iter().any(|a| {
-            std::str::from_utf8(a).ok().is_some_and(|s| {
-                game.process_dirs
-                    .iter()
-                    .any(|d| std::path::Path::new(s).starts_with(d))
-            })
-        }) {
-            continue;
-        }
-        let Ok(env) = catalog::bounded(&p.join("environ"), 262144) else {
-            continue;
-        };
-        if matching_app_id(&env, &app_id) {
-            return Ok(true);
-        }
-    }
-    Ok(false)
+async fn launch_status(app_id: String) -> Result<bool, String> {
+    tauri::async_runtime::spawn_blocking(move || {
+        launch::status(&app_id, &scan_catalog(), std::path::Path::new("/proc"))
+    })
+    .await
+    .map_err(|_| "Observation Steam interrompue")?
 }
 // Test-only fixed telemetry and close; no paths or evaluation accepted over IPC.
 #[cfg(feature = "native-qa")]
@@ -316,26 +267,6 @@ fn main() {
                 }
             }
         });
-}
-
-fn matching_app_id(env: &[u8], app_id: &str) -> bool {
-    env.split(|b| *b == 0).any(|s| {
-        s == format!("SteamAppId={app_id}").as_bytes()
-            || s == format!("SteamGameId={app_id}").as_bytes()
-    })
-}
-#[cfg(test)]
-mod launch_tests {
-    use super::*;
-    #[test]
-    fn no_false_confirmation() {
-        assert!(!matching_app_id(b"SteamAppId=4400\0", "440"));
-        assert!(!matching_app_id(b"UNRELATED=440\0", "440"));
-        assert!(matching_app_id(b"SteamGameId=440\0", "440"));
-        assert!(request_launch("1;touch /tmp/bad".into()).is_err());
-        assert!(!launch_status("4294967295".into()).unwrap());
-        assert!(catalog::scan_from(&[]).entries.is_empty());
-    }
 }
 
 #[cfg(test)]

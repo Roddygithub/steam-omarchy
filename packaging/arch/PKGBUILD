@@ -1,4 +1,4 @@
-# Prepared local alpha recipe; NOT an AUR submission or released archive.
+# Local qualification only. Binary security approval and clean-chroot review pending.
 pkgname=steam-omarchy-alpha
 pkgver=0.1.0.alpha0
 pkgrel=1
@@ -6,28 +6,44 @@ pkgdesc='Experimental unofficial local Steam library browser'
 arch=('x86_64')
 license=('MIT')
 depends=('webkit2gtk-4.1' 'gtk3' 'libayatana-appindicator' 'openssl')
-makedepends=('rust' 'cargo' 'nodejs' 'npm' 'pkgconf')
+makedepends=('rust' 'nodejs>=20.19' 'npm' 'pkgconf' 'python')
 optdepends=('steam: delegated game launching and client features')
-# Locally supply this reviewed sanitized source archive. No upstream release exists.
-source=('steam-omarchy-source.tar.gz')
-sha256sums=('SKIP') # Replace with reviewed archive digest before any distribution.
+_commit=ba28a2c87c7b36425f4de74c6adee614603e5cb5
+source=("steam-omarchy-${_commit}.tar.gz::https://github.com/Roddygithub/steam-omarchy/archive/${_commit}.tar.gz")
+sha256sums=('5149c6c4a87c7976fde6db0bbd5bbbd10cc79248c013b29c0fba14128efb42ff')
+prepare() {
+  cd "$srcdir/steam-omarchy-$_commit"
+  # Guard the audited inputs; this does NOT extend the source-only exception.
+  python3 - <<'PYGUARD'
+import hashlib, json
+from pathlib import Path
+for name, expected in json.loads(Path('scripts/security/source-alpha.json').read_text())['files'].items():
+    if hashlib.sha256(Path(name).read_bytes()).hexdigest() != expected:
+        raise SystemExit('Audited input changed: ' + name)
+PYGUARD
+  python3 scripts/verify-glib-vendor.py --upstream
+}
 build() {
-  cd "$srcdir/steam-omarchy"
+  cd "$srcdir/steam-omarchy-$_commit"
+  export CARGO_TARGET_DIR="$srcdir/cargo-target"
   npm ci
   npm run build
-  npm run tauri -- build --no-bundle
+  npm run tauri -- build --no-bundle -- --locked
 }
 check() {
-  cd "$srcdir/steam-omarchy"
+  cd "$srcdir/steam-omarchy-$_commit"
+  export CARGO_TARGET_DIR="$srcdir/cargo-target"
   npm run lint
-  cargo test --locked --manifest-path src-tauri/Cargo.toml
+  cargo test --release --locked --manifest-path src-tauri/Cargo.toml
 }
 package() {
-  cd "$srcdir/steam-omarchy"
-  install -Dm755 src-tauri/target/release/steam-omarchy "$pkgdir/usr/bin/steam-omarchy"
+  cd "$srcdir/steam-omarchy-$_commit"
+  install -Dm755 "$srcdir/cargo-target/release/steam-omarchy" "$pkgdir/usr/bin/steam-omarchy"
   install -Dm644 src-tauri/icons/icon.png "$pkgdir/usr/share/icons/hicolor/128x128/apps/steam-omarchy.png"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 THIRD-PARTY-NOTICES.md "$pkgdir/usr/share/licenses/$pkgname/THIRD-PARTY-NOTICES.md"
+  install -Dm644 vendor/glib-0.18.5/LICENSE "$pkgdir/usr/share/licenses/$pkgname/glib/LICENSE"
+  install -Dm644 vendor/glib-0.18.5/COPYRIGHT "$pkgdir/usr/share/licenses/$pkgname/glib/COPYRIGHT"
   cp -r docs/licenses "$pkgdir/usr/share/licenses/$pkgname/dependencies"
   install -Dm644 packaging/arch/steam-omarchy.desktop "$pkgdir/usr/share/applications/steam-omarchy.desktop"
 }

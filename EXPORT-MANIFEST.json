@@ -1,5 +1,5 @@
 {
-  "source_commit": "84cf43709644c86e007570fe73456c4cfc90d964",
+  "source_commit": "92e035faf330abd915542db303b333a062b87d06",
   "status": "NOT_READY_PENDING_INDEPENDENT_AUDIT",
   "files": [
     {
@@ -3994,8 +3994,8 @@
     },
     {
       "path": "packaging/arch/PKGBUILD",
-      "source_sha256": "d5a9a30484786e61c1d98dd46621fabd8594770c40d5c01ca1dda52a31446d91",
-      "export_sha256": "d5a9a30484786e61c1d98dd46621fabd8594770c40d5c01ca1dda52a31446d91",
+      "source_sha256": "74197076125053c2acac810e935020ce3f4be6681ca511252376739d66c94e7a",
+      "export_sha256": "74197076125053c2acac810e935020ce3f4be6681ca511252376739d66c94e7a",
       "transformation": "none"
     },
     {
@@ -4030,8 +4030,8 @@
     },
     {
       "path": "scripts/public-allowlist.json",
-      "source_sha256": "be8acd374ef9a6ade0f4549a632d179613078f80fd87a58390755c9968596d58",
-      "export_sha256": "be8acd374ef9a6ade0f4549a632d179613078f80fd87a58390755c9968596d58",
+      "source_sha256": "a54a6730f305d6de54aec59c4636d11c2083f24fde96f1545995ba167f4f5c34",
+      "export_sha256": "a54a6730f305d6de54aec59c4636d11c2083f24fde96f1545995ba167f4f5c34",
       "transformation": "none"
     },
     {
@@ -4125,9 +4125,15 @@
       "transformation": "none"
     },
     {
+      "path": "src-tauri/src/launch.rs",
+      "source_sha256": "c0bd79542c06941e5719df09efc2661761745dc1bed8ea4d6b73a0c23be92cf2",
+      "export_sha256": "c0bd79542c06941e5719df09efc2661761745dc1bed8ea4d6b73a0c23be92cf2",
+      "transformation": "none"
+    },
+    {
       "path": "src-tauri/src/main.rs",
-      "source_sha256": "61152bef182aa4029e70fef5ad557740ad0c33fb735abe2ac69d7a83a77ff3ca",
-      "export_sha256": "61152bef182aa4029e70fef5ad557740ad0c33fb735abe2ac69d7a83a77ff3ca",
+      "source_sha256": "3d254633d0c092513412c64fb5768669b54b95e1eb3a0463cf6e3a22acb03340",
+      "export_sha256": "3d254633d0c092513412c64fb5768669b54b95e1eb3a0463cf6e3a22acb03340",
       "transformation": "none"
     },
     {
@@ -4168,14 +4174,14 @@
     },
     {
       "path": "src/cinematic.css",
-      "source_sha256": "33f174cf75acff601837e7435a3be511704512df1c5e9a754d5cc50344c49a8f",
-      "export_sha256": "33f174cf75acff601837e7435a3be511704512df1c5e9a754d5cc50344c49a8f",
+      "source_sha256": "893468cfeec7c7206ff2ede5c409ea8b30d3b5f23beddc1f0ed2d40b6bb85774",
+      "export_sha256": "893468cfeec7c7206ff2ede5c409ea8b30d3b5f23beddc1f0ed2d40b6bb85774",
       "transformation": "none"
     },
     {
       "path": "src/main.tsx",
-      "source_sha256": "6cbff651557b00f9ac554f1806f6e32c930d6d6b9e6a1f9e307a55e7a21b583e",
-      "export_sha256": "6cbff651557b00f9ac554f1806f6e32c930d6d6b9e6a1f9e307a55e7a21b583e",
+      "source_sha256": "c9b97ef259e48486674a9384a4f8968b13628a4f700f5c58b58f0f910620651e",
+      "export_sha256": "c9b97ef259e48486674a9384a4f8968b13628a4f700f5c58b58f0f910620651e",
       "transformation": "none"
     },
     {
@@ -4206,6 +4212,12 @@
       "path": "tests/fixtures/themes/stable-4.0.6.toml",
       "source_sha256": "8b5f53ba35b9305aafa72776dd56ea2029faaf29015e2e42db5e19ef698a8e0e",
       "export_sha256": "8b5f53ba35b9305aafa72776dd56ea2029faaf29015e2e42db5e19ef698a8e0e",
+      "transformation": "none"
+    },
+    {
+      "path": "tests/launch-flow.mjs",
+      "source_sha256": "613476c8299fb010384d5c2b75427bfdb826b9fb3200db14c17c5e6a2e6c3f32",
+      "export_sha256": "613476c8299fb010384d5c2b75427bfdb826b9fb3200db14c17c5e6a2e6c3f32",
       "transformation": "none"
     },
     {

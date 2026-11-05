@@ -8,3 +8,4 @@
 .hero.no-art{min-height:400px;padding:128px 7% 32px}
 .hero.no-art h1{font-size:min(64px, 10vw);line-height:1.05}
 @media (min-width:851px) and (max-height:1080px){.hero{min-height:520px}.hero.no-art{min-height:400px}}
+@media(max-width:850px){.hero.no-art{padding-top:200px}}
